@@ -1,8 +1,12 @@
 package kr.heartpattern.kotlinpluginsample
 
+import org.bukkit.command.CommandExecutor
+import org.bukkit.event.Listener
 import org.bukkit.plugin.java.JavaPlugin
 
-class SamplePlugin: JavaPlugin(){
+open class MainLoader: JavaPlugin(), Listener,CommandExecutor {
+    private sealed class MainCommand
+
     override fun onEnable() {
         logger.info("Plugin enabled")
     }
